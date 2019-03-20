@@ -1,0 +1,25 @@
+$(function(){
+	//新增看板
+	$(".create_board").click(function(){
+		$(".bg-box").show()
+		$(".msg").show()
+		$(".new-board-title").val("")
+		$(".hidden-create-board").show()
+	})
+	$(".bg-box").click(function(){
+		$(this).hide()
+		$(".msg").hide()		
+		$(".hidden-create-board").hide()
+		$(".create-board").hide()
+	})
+	//new-board-title變更
+	$(".new-board-title").keyup(function(){
+		if($(".new-board-title").val()!==""){
+			$(".create-board").show()
+			$(".hidden-create-board").hide()
+		}else{
+			$(".create-board").hide()
+			$(".hidden-create-board").show()
+		}
+	})
+})
